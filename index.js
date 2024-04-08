@@ -19,7 +19,7 @@ app.engine('handlebars', exphbs.engine({
 }));
 
 app.get("/", function(req, res) { //ruta raiz
-    res.render("main", { // renderiza a main y manda objeto productos
+    res.render("main", { // renderiza a main y manda arreglo productos
        productos:['banana','cebollas','lechuga','papas','pimenton','tomate']
     });
 });
@@ -32,10 +32,10 @@ app.use('/bootstrap',
 app.use('/bootstrap', 
          express.static(__dirname + '/node_modules/bootstrap/dist/js'));
 
-// Paso 3:Crear un middleware que define una ruta /front y libere el contenido de la carpeta “dist”, de dependencia de jQuery en el node_modules. (DEFINIR CARPETA)
+//ruta jquery
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist'))
 
-// Paso 3.5:Crear un middleware que define /front y libere el contenido de la carpeta “frontend”, de la raiz donde estara el front. (DEFINIR CARPETA)
+// ruta frontend
 app.use('/front', express.static(__dirname + '/frontend'))
 
 // render devuelve un arreglo con los productos y las imagenes vienen de assets 

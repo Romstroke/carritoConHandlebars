@@ -1,0 +1,11 @@
+<h1 class="text-center py-5">Bienvenido al mercado WEB, seleccione sus productos</h1>
+
+<div class="container">
+    <div class="row text-center">
+        {{#each productos}}
+        {{> Productos nombre=this}}
+        {{/each}}
+    </div>
+</div>
+
+{{!-- aqui se hace la estructura del recorrido --}}
